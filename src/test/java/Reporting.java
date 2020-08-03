@@ -13,10 +13,9 @@ public class Reporting {
         getInstance(DriverManagerType.CHROME).setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://social.ndtv.com/static/Weather/report/?pfrom=home-topsubnavigation");
-//        driver.get("https://www.ndtv.com/");
-//        driver.findElement(By.xpath("//a[@id='h_sub_menu']")).click();
-//        driver.findElement(By.xpath("//a[text()='WEATHER']")).click();
+        driver.get("https://www.ndtv.com/");
+        driver.findElement(By.xpath("//a[@id='h_sub_menu']")).click();
+        driver.findElement(By.xpath("//a[text()='WEATHER']")).click();
         driver.findElement(By.xpath("//div[@class='searchContainer']/input[@id='searchBox']")).click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
@@ -28,13 +27,9 @@ public class Reporting {
 
         driver.findElement(By.xpath("//input[@class='searchBox']")).sendKeys("e");
 
-
-//        driver.findElement(By.xpath("//input[@class='searchBox']")).sendKeys(Keys.ENTER);
-//        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-//        driver.findElement(By.xpath("//span[@id='icon_holder']")).click();
         driver.findElement(By.xpath("//input[@id='Pune']")).click();
         driver.findElement(By.xpath("//div[text()='Pune']")).click();
-//        driver.quit();
+        driver.quit();
     }
 
 }
